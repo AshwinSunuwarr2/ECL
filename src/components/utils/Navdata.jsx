@@ -10,5 +10,9 @@ export const SidebarData = [
     {
         title: "Liabilities",
         path: "/liabilities",
-    }
+    },
+    {
+        title: "ECL Calculation",
+        path: "/eclcalc",
+    },
 ]

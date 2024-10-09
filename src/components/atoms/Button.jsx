@@ -1,11 +1,8 @@
 import React from 'react'
 
-const Button = () => {
-  const btnClick = () => {
-    console.log('Button Clicked')
-  }
+const Button = ({btnType, btnTitle}, btnClick) => {
   return (
-    <button className="bg-primary hover:bg-primary/95 text-secondary py-2 px-4 rounded" onClick={btnClick}>Button</button>
+    <button type={btnType} className="bg-primary hover:bg-primary/95 text-secondary py-2 px-4 rounded" onClick={btnClick}>{btnTitle}</button>
   )
 }
 

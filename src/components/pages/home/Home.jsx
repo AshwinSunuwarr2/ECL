@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>This main home page</div>
+    <section className='w-full bg-slate-400'>This main home page</section>
   )
 }
 
