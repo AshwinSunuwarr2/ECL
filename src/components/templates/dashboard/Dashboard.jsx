@@ -1,23 +1,26 @@
 import React from 'react';
 import Sidebar from '../../organisms/sidebar/Sidebar';
 
+import NavPage from '../../navigations/NavPage';
+
+import {Routes, Route} from 'react-router-dom';
+import { Home } from '../../pages';
+
+// import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// import { Assets, Liabalities } from '../../pages';
+
+
 
 const App = () => {
   const sidebarTitle = "My Sidebar";
-  const links = [
-    { label: "Assets", href: "#" },
-    { label: "Liabilites", href: "#" },
-    { label: "Something", href: "#" },
-    { label: "Something", href: "#" },
-  ];
 
   return (
     <section className="flex w-full">
-      <Sidebar sidebarTitle={sidebarTitle} links={links} />
+      <Sidebar sidebarTitle={sidebarTitle} />
 
       <div className="flex-1 p-6 bg-gray-100">
         <h1 className="text-2xl font-title font-bold">Main Content</h1>
-        <p>This is where your main content will go.</p>
+        <NavPage />
       </div>
 
     </section>

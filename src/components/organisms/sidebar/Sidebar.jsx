@@ -1,27 +1,27 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { SidebarData } from '../../utils/Navdata';
 
-const Sidebar = ({ sidebarTitle, links = [] }) => {
+const Sidebar = ({ sidebarTitle}) => {
+   const activeLink = 'hover:bg-primary bg-primary hover:text-black px-4 py-2 rounded-l-2xl flex flex-col';
+   const normalLink = 'hover:bg-primary hover:text-black px-4 py-2 rounded-l-2xl flex flex-col';
   return (
-    <div className="flex flex-col w-60 h-screen bg-secondary text-white">
+    <section className="flex flex-col w-[190px] h-screen bg-secondary text-white">
       <div className="flex items-center justify-center h-16 border-b border-gray-700">
         <h1 className="text-xl font-bold">{sidebarTitle}</h1>
       </div>
-      <nav className="flex-1">
-        <ul>
-          {links.length > 0 ? (
-            links.map((link, index) => (
-              <li key={index} className="hover:bg-gray-700">
-                <a href={link.href} className="block p-4">
-                  {link.label}
-                </a>
-              </li>
-            ))
-          ) : (
-            <li className="p-4">No links available</li>
-          )}
-        </ul>
+      <nav className="flex-1 gap-1">
+        {SidebarData.map((item, index) =>(
+
+            <NavLink key={index}  className={({ isActive }) => (isActive ? activeLink : normalLink)} to={item.path}>{item.title}</NavLink>
+
+        )
+         
+            
+          )
+        }
       </nav>
-    </div>
+    </section>
   );
 };
 
