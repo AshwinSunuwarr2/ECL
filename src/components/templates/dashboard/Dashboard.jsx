@@ -11,7 +11,6 @@ const App = () => {
       <Sidebar sidebarTitle={sidebarTitle} />
 
       <div className="flex-1 bg-primary">
-        <h1 className="text-[2.5rem] font-title text-center text-white">ECL APP</h1>
         <NavPage />
       </div>
 
