@@ -7,10 +7,10 @@ const App = () => {
   const sidebarTitle = "My Sidebar";
 
   return (
-    <section className="flex w-full">
-      <Sidebar sidebarTitle={sidebarTitle} />
+    <section className="flex flex-row w-full flex-grow">
+      <Sidebar sidebarTitle={sidebarTitle} className=""/>
 
-      <div className="flex-1 bg-primary">
+      <div className="bg-primary flex-1 ml-[200px] p-10">
         <NavPage />
       </div>
 
