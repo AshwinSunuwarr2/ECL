@@ -4,7 +4,7 @@ import { LineGraph } from '../../../graphs'
 
 const ECLCalc = () => {
   return (
-    <section className='w-full inline-flex flex-col justify-center p-4'>
+    <section className='w-full flex-grow bg-red-200 flex-col justify-center items-center'>
         <ECLForm/>
         <LineGraph/>
     </section>
