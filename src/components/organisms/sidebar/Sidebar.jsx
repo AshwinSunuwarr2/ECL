@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { SidebarData } from "../../utils/Navdata";
 
 const Sidebar = ({  sidebarTitle, isOpen, toggleSidebar , className }) => {
-  const isSmallScreen = window.innerWidth < 768;
 
   const activeLink =
     "hover:bg-primary bg-primary hover:text-secondary px-4 py-2 rounded-l-full flex flex-col font-bold";
@@ -11,7 +10,7 @@ const Sidebar = ({  sidebarTitle, isOpen, toggleSidebar , className }) => {
     "hover:bg-primary px-4 py-2 rounded-l-full flex flex-col font-bold";
 
   return (
-    <section className={`flex top-0 left-0 z-20 flex-col fixed lg:w-[200px] sm:w-[150px] pl-2 h-screen bg-black/30 backdrop-blur-[10px] text-white ${className} ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <section className={`flex top-0 left-0 z-20 flex-col fixed w-[200px] pl-2 h-screen bg-black/30 backdrop-blur-[10px] text-white ${className} ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
       <button onClick={toggleSidebar} className="p-4 lg:hidden md:hidden">Close</button>
       <div className="flex items-center justify-center h-16 border-b border-gray-700">
         <h1 className="text-xl font-bold">{sidebarTitle}</h1>
@@ -22,7 +21,7 @@ const Sidebar = ({  sidebarTitle, isOpen, toggleSidebar , className }) => {
             key={index}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
             to={item.path}
-            onClick={isSmallScreen ? toggleSidebar : null}
+            onClick={window.innerWidth < 768 ? toggleSidebar : null}
           >
             {item.title}
           </NavLink>
